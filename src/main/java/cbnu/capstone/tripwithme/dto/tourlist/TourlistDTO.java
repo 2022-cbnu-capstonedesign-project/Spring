@@ -1,4 +1,7 @@
+package cbnu.capstone.tripwithme.dto.tourlist;
 
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
