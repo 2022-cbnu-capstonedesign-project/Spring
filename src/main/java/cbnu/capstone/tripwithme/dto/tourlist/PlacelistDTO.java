@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class TourlistDTO{
+public class PlacelistDTO {
 
     private int tour_price;
     private String tour_region;
