@@ -26,9 +26,9 @@ INSERT INTO USERTICKETLIST (place_code, userid, using_ticket) values ('A00012','
 INSERT INTO USERTICKETLIST (place_code, userid, using_ticket) values ('A00012','system',0);
 INSERT INTO USERTICKETLIST (place_code, userid, using_ticket) values ('A00018','system',0);
 
-INSERT INTO paidlist (paid_time,place_code, price) values (sysdate(),'A00001',1000);
-INSERT INTO paidlist (paid_time,place_code, price) values (sysdate(),'A00001',1000);
-INSERT INTO paidlist (paid_time,place_code, price) values (sysdate(),'A00011',1000);
-INSERT INTO paidlist (paid_time,place_code, price) values (sysdate(),'A00012',2000);
-INSERT INTO paidlist (paid_time,place_code, price) values (sysdate(),'A00012',2000);
-INSERT INTO paidlist (paid_time,place_code, price) values (sysdate(),'A00018',1000);
+INSERT INTO paidlist (place_code, price) values ('A00001',1000);
+INSERT INTO paidlist (place_code, price) values ('A00001',1000);
+INSERT INTO paidlist (place_code, price) values ('A00011',1000);
+INSERT INTO paidlist (place_code, price) values ('A00012',2000);
+INSERT INTO paidlist (place_code, price) values ('A00012',2000);
+INSERT INTO paidlist (place_code, price) values ('A00018',1000);

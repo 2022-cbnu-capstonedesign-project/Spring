@@ -27,7 +27,7 @@ public class PaidList {
     @Column
     private int price;
 
-    @CreationTimestamp
+    @Column(name = "timestamp", nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Timestamp paidTime;
 
 }
