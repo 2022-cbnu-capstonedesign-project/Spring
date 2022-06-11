@@ -1,9 +1,9 @@
 package cbnu.capstone.tripwithme.controller.userpage;
 
 
-import cbnu.capstone.tripwithme.dto.placelist.PlacelistDTO;
+
 import cbnu.capstone.tripwithme.dto.user.UserTicketlistDTO;
-import cbnu.capstone.tripwithme.service.placelist.PlacelistService;
+
 import cbnu.capstone.tripwithme.service.user.UserTicketlistService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;

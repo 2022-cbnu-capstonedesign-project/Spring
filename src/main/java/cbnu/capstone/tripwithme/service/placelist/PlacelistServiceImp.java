@@ -1,6 +1,5 @@
 package cbnu.capstone.tripwithme.service.placelist;
 
-import cbnu.capstone.tripwithme.dto.placelist.PaidlistDTO;
 import cbnu.capstone.tripwithme.dto.placelist.PlacelistDTO;
 
 import cbnu.capstone.tripwithme.mapper.placelist.PlacelistMapper;
