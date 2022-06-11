@@ -1,6 +1,5 @@
 package cbnu.capstone.tripwithme.mapper.placelist;
 
-import cbnu.capstone.tripwithme.dto.placelist.PaidlistDTO;
 import cbnu.capstone.tripwithme.dto.placelist.PlacelistDTO;
 import org.apache.ibatis.annotations.Mapper;
 
