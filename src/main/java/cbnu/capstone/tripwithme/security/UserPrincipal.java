@@ -1,7 +1,7 @@
 package cbnu.capstone.tripwithme.security;
 // User의 상속. 스프링 시큐리티는 이 객체에 저장 된 정보를 사용하여, 인증 및 권한부여를 수행.
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.woolbro.model.User;
+import cbnu.capstone.tripwithme.entity.User.User;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
