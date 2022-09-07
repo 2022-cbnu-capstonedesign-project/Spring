@@ -1,6 +1,6 @@
 package cbnu.capstone.tripwithme.entity.User;
 
-import com.example.demo.model.audit.DateAudit;
+import cbnu.capstone.tripwithme.entity.User.audit.DateAudit;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
