@@ -1,5 +1,5 @@
 package cbnu.capstone.tripwithme.security;
-
+// JWT 생성 후, 유효성 검증
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
