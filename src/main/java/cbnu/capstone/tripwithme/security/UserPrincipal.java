@@ -17,32 +17,34 @@ public class UserPrincipal implements UserDetails {
 
     private String name;
 
-    private String username;
+    private String userid;
 
-    @JsonIgnore
-    private String email;
+    private String phone_number;
+
+    private int birth;
 
     @JsonIgnore
     private String password;
 
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserPrincipal(Long id, String name, String username, String email, String password,
-                         Collection<? extends GrantedAuthority> authorities) {
+    public UserPrincipal(Long id, String name, String userid, String phone_number, String password,
+                         Collection<? extends GrantedAuthority> authorities , int birth) {
         this.id = id;
         this.name = name;
-        this.username = username;
-        this.email = email;
+        this.userid = userid;
+        this.phone_number = phone_number;
         this.password = password;
         this.authorities = authorities;
+        this.birth = birth;
     }
 
     public static UserPrincipal create(User user) {
         List<GrantedAuthority> authorities = user.getRoles().stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName().name())).collect(Collectors.toList());
 
-        return new UserPrincipal(user.getId(), user.getName(), user.getUsername(), user.getEmail(), user.getPassword(),
-                authorities);
+        return new UserPrincipal(user.getId(), user.getName(), user.getUserid(), user.getPhone_number(), user.getPassword(),
+                authorities, user.getbirth());
     }
 
     public Long getId() {
@@ -53,18 +55,22 @@ public class UserPrincipal implements UserDetails {
         return name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPhone_number() {
+        return phone_number;
     }
 
-    @Override
-    public String getUsername() {
-        return username;
+    public int getbirth() {
+        return birth;
     }
 
     @Override
     public String getPassword() {
         return password;
+    }
+
+    @Override // userid get
+    public String getUsername() {
+        return userid;
     }
 
     @Override

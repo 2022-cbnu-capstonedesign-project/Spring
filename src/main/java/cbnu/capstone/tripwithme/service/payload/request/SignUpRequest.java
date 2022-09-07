@@ -9,12 +9,7 @@ public class SignUpRequest {
 
     @NotBlank
     @Size(min = 3, max = 15)
-    private String username;
-
-    @NotBlank
-    @Size(max = 40)
-    @Email
-    private String email;
+    private String userid;
 
     @NotBlank
     @Size(min = 6, max = 20)
@@ -22,7 +17,11 @@ public class SignUpRequest {
 
     @NotBlank
     @Size(min = 3, max = 15)
-    private String addr;
+    private String phone_number;
+
+    @NotBlank
+    @Size(max = 15)
+    private int birth;
 
     public String getName() {
         return name;
@@ -32,20 +31,12 @@ public class SignUpRequest {
         this.name = name;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getPassword() {
@@ -56,12 +47,20 @@ public class SignUpRequest {
         this.password = password;
     }
 
-    public String getaddr() {
-        return addr;
+    public String getPhone_number() {
+        return phone_number;
     }
 
-    public void setaddr(String addr) {
-        this.addr = addr;
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
+
+    public int getbirth() {
+        return birth;
+    }
+
+    public void setbirth(int birth) {
+        this.birth = birth;
     }
 
 }

@@ -1,6 +1,4 @@
 package cbnu.capstone.tripwithme.entity.User;
-
-import cbnu.capstone.tripwithme.entity.User.audit.DateAudit;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
@@ -11,26 +9,21 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = { "username" }),
-        @UniqueConstraint(columnNames = { "email" }) })
-public class User extends DateAudit {
+@Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = { "userid" }) })
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; //uid
+    private Long id; // id 번호
 
-    @NotBlank
+    @NotBlank // 이름
     @Size(max = 40)
     private String name;
 
-    @NotBlank
-    @Size(max = 15)
-    private String username;
-
-    @NaturalId
+    @NaturalId // id
     @NotBlank
     @Size(max = 40)
     @Email
-    private String email;
+    private String userid;
 
     @NotBlank
     @Size(max = 100)
@@ -40,28 +33,24 @@ public class User extends DateAudit {
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    @NotBlank
+    @NotBlank // 핸드폰번호
     @Size(max = 30)
-    private String addr;
+    private String phone_number;
 
-    @NotBlank
+    @NotBlank // 생년월일
     @Size(max = 15)
-    private int total_point;
-
-    @NotBlank
-    @Size(max = 15)
-    private int grade;
+    private int birth;
 
     public User() {
 
     }
 
-    public User(String name, String username, String email, String password, String addr) {
+    public User(String name, String userid, String password, String phone_number, int birth) {
         this.name = name;
-        this.username = username;
-        this.email = email;
+        this.userid = userid;
         this.password = password;
-        this.addr = addr;
+        this.phone_number = phone_number;
+        this.birth = birth;
     }
 
     public Long getId() {
@@ -72,14 +61,6 @@ public class User extends DateAudit {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getName() {
         return name;
     }
@@ -88,12 +69,12 @@ public class User extends DateAudit {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getPassword() {
@@ -112,19 +93,19 @@ public class User extends DateAudit {
         this.roles = roles;
     }
 
-    public String getaddr() {
-        return addr;
+    public String getPhone_number() {
+        return phone_number;
     }
 
-    public void setaddr(String username) {
-        this.addr = username;
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 
-    public void setTotal_point(int total_point) { this.total_point = total_point; }
+    public int getbirth() {
+        return birth;
+    }
 
-    public int getTotal_point(int total_point) {return total_point;}
-
-    public int getGrade(int grade) {return grade;}
-
-    public void setGrade(int grade){this.grade = grade;}
+    public void setbirth(int birth) {
+        this.birth = birth;
+    }
 }
